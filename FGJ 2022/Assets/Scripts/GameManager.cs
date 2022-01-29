@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public bool spawntimeractive=true;
 
     public List<EnemySpawn> enemies;
-    public EnemySpawn nextEnemy=null;
+    public int enemyIndex = 0;
 
     public float maxX;
     public float minX;
@@ -32,22 +32,16 @@ public class GameManager : MonoBehaviour
         if (spawntimeractive)
         {
             spawntimer += Time.deltaTime;
-            
-            if (nextEnemy == null&&enemies.Count>0)
-            {
-                nextEnemy = enemies[0];
-                enemies.RemoveAt(0);
-            }
 
-            if (nextEnemy != null)
+            if (enemyIndex < enemies.Count)
             {
-                if (spawntimer >= nextEnemy.spawntime)
+                if (spawntimer >= enemies[enemyIndex].spawntime)
                 {
-                    Instantiate<GameObject>(nextEnemy.enemy);
-                    
+                    //Instantiate<GameObject>(enemies[enemyIndex].enemy);
+                    enemyIndex++;
                 }
             }
-
+            
         }
 
 

@@ -255,14 +255,10 @@ MonoBehaviour:
   speed: 5
   focusedSpeed: 0
   life: 3
-  maxX: 4.6
-  minX: -4.6
-  maxY: 4.8
-  minY: -4.8
   invulnerabilityTimer: 0
   isPlayer1: 0
   playerGlow: {fileID: 533361372}
-  gameManager: {fileID: 598485298}
+  gameManagerObject: {fileID: 598485298}
   spriterenderer: {fileID: 1263125930}
 --- !u!58 &513662545
 CircleCollider2D:
@@ -592,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &543413165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,10 +747,7 @@ MonoBehaviour:
   - enemy: {fileID: 0}
     spawntime: 0
     spawnLocation: {x: 0, y: 0}
-  nextEnemy:
-    enemy: {fileID: 0}
-    spawntime: 0
-    spawnLocation: {x: 0, y: 0}
+  enemyIndex: 0
   maxX: 4.6
   minX: -4.6
   maxY: 4.8
@@ -1115,14 +1108,10 @@ MonoBehaviour:
   speed: 5
   focusedSpeed: 0
   life: 3
-  maxX: 4.6
-  minX: -4.6
-  maxY: 4.8
-  minY: -4.8
   invulnerabilityTimer: 0
   isPlayer1: 1
   playerGlow: {fileID: 2025128312}
-  gameManager: {fileID: 598485298}
+  gameManagerObject: {fileID: 598485298}
   spriterenderer: {fileID: 876756798}
 --- !u!58 &1553408443
 CircleCollider2D:
@@ -1392,67 +1381,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1755216761
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577610, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577612, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_Name
-      value: ShootAimedSpreadEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234494318611577612, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dd1be311b81ae2245a891a6e269f59db, type: 3}
 --- !u!1 &2025128312
 GameObject:
   m_ObjectHideFlags: 0
