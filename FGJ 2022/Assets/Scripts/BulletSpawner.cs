@@ -18,7 +18,7 @@ public class BulletSpawner : MonoBehaviour
     public bool spinReversal;
     public float maxSpinSpeed;
 
-    //t‰ht‰‰miseen liittyv‰t jutut
+    //Things needed for aiming
     public bool aim;
     public Transform target;
     private Vector3 targetPos;
@@ -86,10 +86,11 @@ public class BulletSpawner : MonoBehaviour
         
         for (int i = 0; i< bulletsPerArray; i++)
         {
+            //this really should be using pooling, specially for players and all the big shitstroms but not gonna take time to do it properly
             GameObject bullet=Instantiate<GameObject>(bulletResource);
             Bullet bulletdata = bullet.GetComponent<Bullet>();
 
-            //ofset be here jos sen tekee
+            //offset would be either here or in the bullet prefab
             bullet.transform.position = this.transform.position;
             bulletdata.rotation = spread[i] + rotation +gameObject.transform.rotation.eulerAngles.z;
             bulletdata.speed = bulletSpeed;

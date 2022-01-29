@@ -99,7 +99,7 @@ MonoBehaviour:
   velocity: {x: 1, y: 0}
   speed: 10
   rotation: 90
-  timeToLive: 3
+  timeToLive: 1.2
   hurtsBlue: 0
   hurtsRed: 0
   isplayerbullet: 1

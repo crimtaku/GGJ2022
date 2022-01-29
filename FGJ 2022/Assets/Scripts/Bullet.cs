@@ -14,6 +14,11 @@ public class Bullet : MonoBehaviour
     public bool hurtsBlue;
     public bool hurtsRed;
 
+    public float maxX=4.8f;
+    public float minX=-4.8f;
+    public float maxY=5;
+    public float minY=-5;
+
     public bool isplayerbullet;
 
     // Start is called before the first frame update
@@ -26,8 +31,26 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(velocity * speed*Time.deltaTime);
-        timeToLive -= Time.deltaTime;
+
+        /*timeToLive -= Time.deltaTime;
         if (timeToLive < 0)
+        {
+            DestroyBullet();
+        }*/
+
+        if (transform.position.x > maxX)
+        {
+            DestroyBullet();
+        }
+        else if (transform.position.x < minX)
+        {
+            DestroyBullet();
+        }
+        if (transform.position.y > maxY)
+        {
+            DestroyBullet();
+        }
+        else if (transform.position.y < minY)
         {
             DestroyBullet();
         }

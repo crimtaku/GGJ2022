@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject playerGlow;
 
-    public GameObject gameManager;
+    public GameObject gameManagerObject;
+    private GameManager gameManager;
 
     private PlayerInput playerInput;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+        gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,22 @@ public class PlayerController : MonoBehaviour
 
         move = playerInput.actions["Move"].ReadValue<Vector2>();
                
+        if (move.x > 0 && transform.position.x > gameManager.maxX)
+        {
+            move.x = 0;
+        }
+        else if (move.x < 0 && transform.position.x < gameManager.minX)
+        {
+            move.x = 0;
+        }
+        if (move.y > 0 && transform.position.y > gameManager.maxY)
+        {
+            move.y = 0;
+        }
+        else if (move.y < 0 && transform.position.y < gameManager.minY)
+        {
+            move.y = 0;
+        }
 
         transform.Translate(move.x*Time.deltaTime*speed, move.y * Time.deltaTime*speed,0);        
     }
@@ -66,7 +84,7 @@ public class PlayerController : MonoBehaviour
             //jos elämät on loppu niin kutsutaan gamemanagerin scriptiä jossa joko muutetaan player active falseksi tai hävitään peli jos toinenkin on alhaalla
             if (life <= 0)
             {
-                gameManager.GetComponent<GameManager>().PlayerDead(this.gameObject);                
+                gameManager.PlayerDead(this.gameObject);                
             }           
         }
 
